@@ -1,0 +1,17 @@
+
+
+body{
+	font-family: Verdana,Arial,"Verdana","Helvetica",Sans-serif;
+	margin-left:1px; 
+	margin-right:1px;  
+	margin-top:0px; 
+	margin-bottom:0px;
+	background-color:#8DACDF;
+} 
+
+#divconsole{
+	min-height:30px;
+	width:500px;
+	border:1pt solid;
+	background-color:#fff;		
+}

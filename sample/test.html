@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript" src="js/zsi.loadSequence.js" ></script>
+<script type="text/javascript">
+var scripts = [
+	 {url:"http://code.jquery.com/jquery-1.11.2.js",type:"text/javascript"}
+	,{url:"css/style.css",type:"text/css"}   
+	,{url:"js/otherlib.js",type:"text/javascript"} 
+
+];
+
+var errorFiles=[];
+
+zsi.loadSequence({
+	 files:scripts
+	,startIndex:0  //initial value for recursive purposes.
+	,onAllLoaded: function(){
+		logstatus("files successfully loaded.");
+		if(errorFiles.length>0){
+			logstatus( "No. of error(s) found: " + errorFiles.length);
+		}
+	}	
+	,onLoadingFile: function(file){
+		logstatus("loading...[ " + file.url + " ]");
+	}
+	,onEachLoaded: function(file){
+		logstatus("loaded: " + file.url);
+	}	
+	,onError: function(file,error){
+		errorFiles.push(file);
+		logstatus("error loading file:" + file.url);		
+	}		
+});
+
+
+ function logstatus(p_msg){
+	if(typeof $==='undefined'){
+		var obj = document.getElementById("divconsole");  
+		document.write('<div id="divconsole">' + p_msg + '<br /></div>')
+	}
+	else	
+		$("#divconsole").append(p_msg + "<br />");
+ }
+ 
+ function testOtherLib(){
+ 
+	if(typeof otherlib !== 'undefined') 
+		otherlib();
+	else{
+		//you can remove otherlib.js to show this message
+		alert("library otherlib.js is not yet loaded");
+	}
+ }
+ 
+</script>
+ 
+</head>
+ 
+<body>
+<a href="javascript:testOtherLib();" > Test Other Library Function</a>
+
+</body>
+ 
+</html> 
