@@ -2,7 +2,7 @@
  * zsi.loadSequence.js 
  * @author German M. Fuentes <gm.fuentes@gmail.com>
  * @copyright 2015 ZettaSolutions, Inc. <zetta-solutions.net>
- * @license under MIT  
+ * @license under MIT https://github.com/smager/zsi.loadSequence
  **/
 
 if(typeof zsi==='undefined') zsi={};
