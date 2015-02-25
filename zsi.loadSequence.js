@@ -45,7 +45,6 @@ zsi.loadSequence = function(o) {
 		}
 		
 		e.onerror =function(errorData){	
-			console.log("test");
 			if(o.onError) o.onError(file,errorData);
 			loadNextFile();								 
 		}
