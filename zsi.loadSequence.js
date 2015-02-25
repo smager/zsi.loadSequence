@@ -5,13 +5,6 @@
  * @license under MIT  
  **/
 
-/* Modification History
-Date       By    History
----------  ----  -------------------------------------------------------------------------------------------
-FEB-25-15  GF    added errorEvent callback function.
-FEB-24-15  GF    Created zsi.loadSequence
-*/
-
 if(typeof zsi==='undefined') zsi={};
 
 zsi.loadSequence = function(o) {
